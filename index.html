@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sosa Motion AR Viewer</title>
 
+    <!-- 👇 Add this line anywhere inside the <head> -->
+    <link rel="ar" href="model.glb">
+
     <!-- Google model-viewer -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
@@ -59,32 +62,6 @@
   </head>
 
   <body>
-    <div class="loading">Loading 3D Model...</div>
-
-    <model-viewer
-      id="arViewer"
-      src="model.glb"
-      ios-src="https://cdn.jsdelivr.net/gh/csosaSN/web-ar-viewer/model.usdz"
-      ar
-      ar-modes="webxr scene-viewer quick-look"
-      camera-controls
-      autoplay
-      exposure="1.2"
-      environment-image="neutral"
-      shadow-intensity="1.2"
-      shadow-softness="1"
-      interaction-prompt="auto">
-    </model-viewer>
-
-    <button slot="ar-button" class="ar-button">View in AR</button>
-
-    <script>
-      const viewer = document.getElementById("arViewer");
-      const loadingText = document.querySelector(".loading");
-
-      viewer.addEventListener("load", () => {
-        loadingText.style.display = "none";
-      });
-    </script>
+    <!-- rest of your code -->
   </body>
 </html>
